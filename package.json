@@ -4,7 +4,8 @@
   "description": "Quiz app",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-test": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,10 @@
   },
   "homepage": "https://github.com/vdynmx/awiz#readme",
   "dependencies": {
+    "body-parser": "^1.18.3",
+    "dotenv": "8.2.0",
+    "express": "^4.16.3",
+    "mongoose": "^5.3.2",
     "nodemon": "^2.0.6"
   }
 }

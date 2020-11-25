@@ -7,7 +7,8 @@ const quizSchema = new Schema({
         required: true
     },
     answers: [{
-        type: String  
+       answer: { type: String },
+       isCorrect: Boolean // should false even be saved ? if field is not available would be it falsey ?
     }]
 });
 
