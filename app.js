@@ -3,9 +3,11 @@ const express = require('express');
 const bodyParser = require('body-parser'); // to parse the jsonified data via the http stream
 const mongoose = require('mongoose');
 const quizRoutes = require('./routes/quiz');
+const ejs = require('ejs');
 const PORT = process.env.PORT || 8080;
 
 const app = express();
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json()); // Every http string that comes in will be jsonified
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -13,6 +15,9 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Headers', 'Authorization');
     next();
 });
+
+app.use(express.static('public'));
+app.set('view engine', 'ejs')
 
 app.use('/', quizRoutes); // Quiz homepage
 
