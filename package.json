@@ -1,0 +1,22 @@
+{
+  "name": "awiz",
+  "version": "1.0.0",
+  "description": "Quiz app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vdynmx/awiz.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vdynmx/awiz/issues"
+  },
+  "homepage": "https://github.com/vdynmx/awiz#readme",
+  "dependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
