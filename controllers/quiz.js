@@ -5,8 +5,8 @@ exports.createQuiz = async (req, res, next) => {
     const answers = req.body.answers;
     try {
         const quiz = new Quiz({
-            question = question,
-            answers = answers
+            question: question,
+            answers: answers
         });
         console.log('new Quiz object'+quiz);
         await quiz.save();
@@ -14,6 +14,26 @@ exports.createQuiz = async (req, res, next) => {
     }
     catch(err) {
         console.log(err);
-        next();
+        next(); // ?? should i be fwd he error obj so it get caugh in app.js ?
     }
 };
+
+exports.getAllQuizzes = async (req, res, next) => {
+    try{
+    const quizzes = Quiz.find({}, (err, quiz) => {
+        let quizMap = [];
+        
+        quiz.forEach((quiz) => {
+            //console.log("Entry number"+quiz);
+            quizMap.push(quiz);
+        });
+        //console.log(quizMap);
+        return res.json(quizMap);
+    });
+    //console.log(quizzes);
+    //res.json(quizzes);
+    }catch(err){
+        console.log(err);
+        next();
+    }
+}
