@@ -16,10 +16,10 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use(express.static('public'));
-app.set('view engine', 'ejs')
+// app.use(express.static('public'));
+// app.set('view engine', 'ejs')
 
-app.use('/', quizRoutes); // Quiz homepage
+app.use('/api', quizRoutes); // Quiz homepage
 
 app.use((error, req, res, next) => {
   console.log(error);
